@@ -1,0 +1,19 @@
+# ignore compiled Python files and caches
+__pycache__/
+*.pyc
+
+# ignore image dataset
+data/
+
+# ignore saved model weights
+model.npz
+
+# ignore macOS garbage
+.DS_Store
+
+# ignore QuickDraw raw cache
+.quickdrawcache/
+
+# ignore virtual environments if any
+venv/
+env/
