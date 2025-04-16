@@ -141,8 +141,8 @@ def load_quickdraw_dataset(image_dir: str, classes: List[str], test_size=0.2) ->
     Y = np.array(Y)
     return train_test_split(X, Y, test_size=test_size, random_state=42)
 
-# train
-def train_model(model, X_train, Y_train, X_val, Y_val, epochs=100, batch_size=64):
+# train ##### CHANGE EPOCHS HERE #####
+def train_model(model, X_train, Y_train, X_val, Y_val, epochs=100, batch_size=64): # increase epochs if you wish
     for epoch in range(epochs):
         indices = np.arange(X_train.shape[0])
         np.random.shuffle(indices)
@@ -168,6 +168,7 @@ def main():
     image_dir = "./data/quickdraw"
     make_data_dirs(cache_dir, image_dir)
 
+    ###### CHANGE DOODLES HERE ######
     image_types = ['bee', 'car', 'cat', 'dog', 'sailboat']
     stroke_widths = [2, 3]
     gen_class_images(image_types, cache_dir, image_dir, stroke_widths)
