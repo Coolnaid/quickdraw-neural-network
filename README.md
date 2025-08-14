@@ -16,30 +16,30 @@ general overview: (if you don't know the basics of neural networks this won't ma
 
 # backend
 1. fetch data using quickdrawdatagroup
-    if folders already exist in the same directory as 'quickdraw_dataset.py' with the hierarchy quickdraw/data for each doodle type (such as 'cat' or 'car) there will be no additional files donwloaded
+    - if folders already exist in the same directory as 'quickdraw_dataset.py' with the hierarchy quickdraw/data for each doodle type (such as 'cat' or 'car) there will be no additional files donwloaded
 2. convert data from vector into 28x28 png and a stroke width of 3 which helps increase variation for training
 3. create neural network using feed forward structure where each neuron connects to every other neuron
-    input layer with 28x28 pixels (784) inputs
-    each of the 3 hidden layers utilizes ReLU activation
-    use softmax at the end to turn raw score into probabilities
+    - input layer with 28x28 pixels (784) inputs
+    - each of the 3 hidden layers utilizes ReLU activation
+    - use softmax at the end to turn raw score into probabilities
 4. calculate prediction accuracy with cross entropy loss
 5. backpropagation with one hot encoding
-    update weights and biases accordingly
+    - update weights and biases accordingly
 6. save model to model.npz
 7. training loop
-    create a batch
-    forward pass
-    compute loss
-    backpropagation
-    update weights
-    trach accuracy and print for each epoch
+    - create a batch
+    - forward pass
+    - compute loss
+    - backpropagation
+    - update weights
+    - track accuracy and print for each epoch
 
 # frontend (streamlit)
 1. import 'load_model" from 'quickdraw_dataset.py' as well as streamlit, PIL.Image, and streamlit_drawable_canvas
 2. create 700x700 white canvas with black stroke color
 3. process canvas input
-    convert canvas to grayscale, resize to 28x28 (model input), and flatten array
-    load model and feed array
+    - convert canvas to grayscale, resize to 28x28 (model input), and flatten array
+    - load model and feed array
 4. select highest probablity and print result
 
 # default parameters and utilization
